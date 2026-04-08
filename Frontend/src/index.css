@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-prime-50: #f5f3ff;
+  --color-prime-100: #ede9fe;
+  --color-prime-200: #ddd6fe;
+  --color-prime-300: #c4b5fd;
+  --color-prime-400: #a78bfa;
+  --color-prime-500: #8b5cf6;
+  --color-prime-600: #7c3aed;
+  --color-prime-700: #6d28d9;
+  --color-prime-800: #5b21b6;
+  --color-prime-900: #4c1d95;
+  --color-prime-950: #2e1065;
+
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-reveal: reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes reveal {
+    0% { opacity: 0; transform: translateY(20px) scale(0.98); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+}
+
+@layer base {
+  body {
+    font-family: 'Outfit', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #020617;
+    color: #e2e8f0;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-slate-900/40 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+  }
+  
+  .glass-input {
+    @apply bg-slate-950/50 backdrop-blur-md border border-white/5 focus:border-prime-500/50 focus:ring-4 focus:ring-prime-500/10 transition-all duration-300;
+  }
+
+  .premium-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-prime-400;
+  }
+}
+
+/* Custom Scrollbar */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  @apply bg-prime-500/20 rounded-full hover:bg-prime-500/40 transition-colors;
+}
+
+/* Animations Trigger */
+.todo-item {
+  @apply animate-reveal transition-all duration-300;
+}
+
+.todo-item:hover {
+  @apply -translate-y-1 bg-white/[0.04] border-white/20;
+}
+
+/* Glowing Aura */
+.glow-aura {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(139, 92, 246, 0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+
+.group:hover .glow-aura {
+  opacity: 1;
+}
+
