@@ -1,6 +1,6 @@
-# Focus Flow - Premium Task Manager
+# Task Manager
 
-Focus Flow is a sophisticated, full-stack Todo application designed with a premium, high-end aesthetic. It combines a modern React frontend with a robust Node.js/MySQL backend to provide a seamless and focused productivity experience.
+Task Manager is a sophisticated, full-stack Todo application designed with a premium, high-end aesthetic. It combines a modern React frontend with a robust Node.js/MySQL backend to provide a seamless and focused productivity experience.
 
 ![Focus Flow Banner](file:///C:/Users/Daca_lk/.gemini/antigravity/brain/45bb79be-b0c0-411b-a05a-02b7be2dad9f/focus_flow_redesign_verification_1775628860744.png)
 
